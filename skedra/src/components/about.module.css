@@ -1,0 +1,138 @@
+.about {
+  padding: 7rem 4rem;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.title em {
+  color: var(--teal);
+  font-style: normal;
+}
+
+.text {
+  color: #4a3d2a;
+  line-height: 1.85;
+  font-size: 0.98rem;
+  margin-bottom: 1.2rem;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.valueItem {
+  padding: 1.2rem;
+  background: rgba(22, 80, 102, 0.08);
+  border-radius: 3px;
+  border-left: 3px solid var(--teal);
+}
+
+.valueItem h4 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 0.3rem;
+}
+
+.valueItem p {
+  font-size: 0.78rem;
+  color: #6b5c42;
+  line-height: 1.5;
+}
+
+.right {
+  position: relative;
+}
+
+.bigText {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 12vw, 10rem);
+  font-weight: 800;
+  color: var(--teal);
+  opacity: 0.1;
+  line-height: 1;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  pointer-events: none;
+}
+
+.imgPlaceholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--teal);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.imgPlaceholder::before {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 60%; height: 60%;
+  background: rgba(234, 219, 177, 0.15);
+  border-radius: 100% 0 0 0;
+}
+
+.camIcon {
+  font-size: 2.5rem;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.imgPlaceholder p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 5rem 2rem;
+  }
+
+  .right { order: -1; }
+
+  .imgPlaceholder { aspect-ratio: 16/9; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .about { padding: 4rem 1.5rem; }
+  .values { grid-template-columns: 1fr; }
+}

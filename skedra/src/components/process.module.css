@@ -1,0 +1,101 @@
+.process {
+  padding: 7rem 4rem;
+  background: var(--white);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.08;
+  margin-bottom: 4rem;
+}
+
+.title em {
+  color: var(--teal);
+  font-style: normal;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--cream) 100%);
+}
+
+.step {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.numWrap {
+  width: 56px;
+  height: 56px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.6rem;
+}
+
+.stepDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .process { padding: 5rem 2rem; }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .steps::before { display: none; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .process { padding: 4rem 1.5rem; }
+  .steps { grid-template-columns: 1fr; gap: 2.5rem; }
+}

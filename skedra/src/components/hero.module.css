@@ -1,0 +1,241 @@
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 4rem;
+  padding-top: var(--nav-height);
+  position: relative;
+  overflow: hidden;
+}
+
+.bgShape {
+  position: absolute;
+  top: -10%; right: -5%;
+  width: 55%; height: 120%;
+  background: var(--teal);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.bgCircle {
+  position: absolute;
+  bottom: 8%; left: 6%;
+  width: 200px; height: 200px;
+  border: 1px solid rgba(234, 219, 177, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bgDot {
+  position: absolute;
+  top: 22%; right: 28%;
+  width: 90px; height: 90px;
+  background: var(--cream);
+  opacity: 0.06;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.left {
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(22, 80, 102, 0.4);
+  border: 1px solid rgba(22, 80, 102, 0.6);
+  color: rgba(234, 219, 177, 0.7);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.left h1 {
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.left h1 em {
+  color: var(--cream);
+  font-style: normal;
+  display: block;
+}
+
+.left p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 440px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  background: var(--cream);
+  color: var(--black);
+  padding: 0.9rem 2.2rem;
+  border-radius: 2px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background: var(--cream-dark);
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  background: transparent;
+  color: var(--cream);
+  padding: 0.9rem 2.2rem;
+  border-radius: 2px;
+  border: 1px solid rgba(234, 219, 177, 0.4);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btnOutline:hover {
+  border-color: var(--cream);
+  background: rgba(234, 219, 177, 0.08);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  background: var(--teal);
+  color: var(--white);
+  padding: 0.45rem 1.2rem;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(234, 219, 177, 0.12);
+  border-radius: 4px;
+  padding: 1.4rem 2rem;
+  text-align: right;
+  width: 220px;
+  transition: border-color 0.3s ease;
+}
+
+.statCard:hover {
+  border-color: rgba(234, 219, 177, 0.3);
+}
+
+.num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.label {
+  display: block;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scrollIndicator span {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(234, 219, 177, 0.5), transparent);
+  animation: scrollAnim 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollAnim {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.5) translateY(-10px); }
+  50%       { opacity: 1;   transform: scaleY(1)   translateY(0); }
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 2rem 4rem;
+    gap: 3rem;
+  }
+
+  .right {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .statCard {
+    width: calc(50% - 0.6rem);
+    text-align: left;
+  }
+
+  .bgShape { display: none; }
+  .scrollIndicator { display: none; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .hero { padding: 5rem 1.5rem 3rem; }
+
+  .statCard { width: 100%; }
+
+  .btns { flex-direction: column; }
+
+  .btnPrimary, .btnOutline { text-align: center; }
+}
